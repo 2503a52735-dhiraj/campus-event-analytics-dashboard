@@ -118,18 +118,7 @@ html_content = r"""<!DOCTYPE html>
             letter-spacing: 0.05em;
         }
 
-        .badge-evaluator {
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(245, 158, 11, 0.1));
-            color: #fbbf24;
-            border: 1px solid rgba(251, 191, 36, 0.4);
-            box-shadow: 0 0 15px rgba(251, 191, 36, 0.2);
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .badge-evaluator:hover {
-            transform: scale(1.04);
-            border-color: #fbbf24;
-        }
+        
 
         .badge-clean {
             background: rgba(52, 211, 153, 0.15);
@@ -143,78 +132,7 @@ html_content = r"""<!DOCTYPE html>
             border: 1px solid rgba(167, 139, 250, 0.35);
         }
 
-        /* Evaluator Quick Guide Banner */
-        .evaluator-banner {
-            background: linear-gradient(135deg, rgba(16, 26, 48, 0.95), rgba(22, 34, 62, 0.95));
-            border: 1px solid #33446d;
-            border-left: 5px solid #fbbf24;
-            border-radius: var(--radius-md);
-            padding: 16px 20px;
-            margin-bottom: 18px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 14px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.3);
-        }
-
-        .evaluator-banner-text {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .evaluator-icon-box {
-            width: 44px;
-            height: 44px;
-            background: rgba(251, 191, 36, 0.15);
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fbbf24;
-            font-size: 1.3rem;
-        }
-
-        .evaluator-info h3 {
-            font-size: 1rem;
-            color: #fff;
-            font-weight: 700;
-        }
-        .evaluator-info p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
-
-        .evaluator-jump-chips {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .chip-btn {
-            background: #17223b;
-            border: 1px solid #2d3e64;
-            color: #cbd5e1;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .chip-btn:hover {
-            background: var(--primary);
-            color: #04121d;
-            border-color: var(--primary);
-            box-shadow: 0 2px 10px var(--primary-glow);
-        }
+        
 
         /* Navigation Bar */
         .nav-container {
@@ -483,7 +401,7 @@ html_content = r"""<!DOCTYPE html>
             border-color: var(--primary);
         }
 
-        /* Chart Inference Note / Evaluator Callout */
+        /* Chart Inference Note */
         .chart-inference {
             background: rgba(15, 23, 42, 0.7);
             border: 1px solid rgba(56, 189, 248, 0.2);
@@ -856,37 +774,14 @@ html_content = r"""<!DOCTYPE html>
     <header class="dashboard-header">
         <div class="header-title-box">
             <h1><i class="fa-solid fa-chart-line"></i> Institutional Event Big Data Analytics & 3D Visualizer</h1>
-            <p>Academic Capstone Project in Data Analysis & Visualization (DAV) | Rigorous Data Cleaning Pipeline & Comprehensive Multi-Type Charting Suite</p>
+            <p>Institutional Event Intelligence & Multi-Dimensional Visualization Platform | 14,750 Cleaned Records across 11 IIT Campuses & 7 University Departments</p>
         </div>
         <div class="header-badges">
-            <span class="badge badge-evaluator" onclick="showTab('tab-rubric')"><i class="fa-solid fa-award"></i> Evaluator Rubric: 100/100 (A+)</span>
+            
             <span class="badge badge-clean"><i class="fa-solid fa-circle-check"></i> 100% Certified Clean</span>
             <span class="badge badge-3d"><i class="fa-solid fa-cube"></i> 3D WebGL Arena</span>
         </div>
     </header>
-
-    <!-- Evaluator Fast-Access Rubric Banner -->
-    <div class="evaluator-banner">
-        <div class="evaluator-banner-text">
-            <div class="evaluator-icon-box">
-                <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <div class="evaluator-info">
-                <h3>Evaluator's Quick Inspection Hub & Chart Catalog</h3>
-                <p>Click below to inspect any mandatory chart type with academic formulas, distribution metrics, and business inferences:</p>
-            </div>
-        </div>
-        <div class="evaluator-jump-chips">
-            <button class="chip-btn" onclick="filterGallery('3d')"><i class="fa-solid fa-cube"></i> 3D Graphs (3)</button>
-            <button class="chip-btn" onclick="filterGallery('bar')"><i class="fa-solid fa-chart-column"></i> Bar Graphs (5)</button>
-            <button class="chip-btn" onclick="filterGallery('line')"><i class="fa-solid fa-chart-line"></i> Line Charts (3)</button>
-            <button class="chip-btn" onclick="filterGallery('scatter')"><i class="fa-solid fa-braille"></i> Scatter Plots (3)</button>
-            <button class="chip-btn" onclick="filterGallery('histogram')"><i class="fa-solid fa-chart-simple"></i> Histograms (3)</button>
-            <button class="chip-btn" onclick="filterGallery('pie')"><i class="fa-solid fa-chart-pie"></i> Pie/Donut (3)</button>
-            <button class="chip-btn" onclick="filterGallery('box')"><i class="fa-solid fa-box-archive"></i> Box Plots (4)</button>
-            <button class="chip-btn" onclick="filterGallery('advanced')"><i class="fa-solid fa-wand-magic-sparkles"></i> Advanced Suite (8)</button>
-        </div>
-    </div>
 
     <!-- Navigation Tabs -->
     
@@ -1012,10 +907,10 @@ html_content = r"""<!DOCTYPE html>
     </div>
 
     <nav class="nav-container">
-        <button class="nav-btn active" onclick="showTab('tab-rubric')"><i class="fa-solid fa-award"></i> 🎓 Evaluator Rubric & Scorecard</button>
+        
         <button class="nav-btn" onclick="showTab('tab-3d')"><i class="fa-solid fa-cube"></i> 🧊 3D Visualization Arena</button>
         <button class="nav-btn" onclick="showTab('tab-gallery')"><i class="fa-solid fa-layer-group"></i> 📊 Master Chart Gallery (All Types)</button>
-        <button class="nav-btn" onclick="showTab('tab-overview')"><i class="fa-solid fa-gauge-high"></i> 📈 Executive KPIs & Overview</button>
+        <button class="nav-btn active" onclick="showTab('tab-overview')"><i class="fa-solid fa-gauge-high"></i> 📈 Executive KPIs & Overview</button>
         <button class="nav-btn" onclick="showTab('tab-cleaning')"><i class="fa-solid fa-broom"></i> 🧹 Data Cleaning Studio (Before/After)</button>
         <button class="nav-btn" onclick="showTab('tab-iit')"><i class="fa-solid fa-landmark"></i> 🇮🇳 IIT Campus Deep-Dive</button>
         <button class="nav-btn" onclick="showTab('tab-ucb')"><i class="fa-solid fa-building-columns"></i> 🇺🇸 UCB Global Deep-Dive</button>
@@ -1023,96 +918,7 @@ html_content = r"""<!DOCTYPE html>
         <button class="nav-btn" onclick="showTab('tab-explorer')"><i class="fa-solid fa-table"></i> 🔍 Data Explorer & CSV Export</button>
     </nav>
 
-    <!-- ============================================================== -->
-    <!-- TAB 1: EVALUATOR RUBRIC & SCORECARD -->
-    <!-- ============================================================== -->
-    <section id="tab-rubric" class="tab-pane active">
-        <div class="callout-box">
-            <strong><i class="fa-solid fa-circle-check"></i> Student Submission Self-Audit & Course Assessment Rubric:</strong>
-            This dashboard was engineered to exceed academic criteria for Data Analysis and Visualization (DAV) courses. It provides complete transparency with verifiable before-and-after data hygiene audit trails, over 30 interactive charts, mathematical justifications, and domain insights across two distinct educational datasets (15,300 total raw records).
-        </div>
-
-        <div class="kpi-grid">
-            <div class="kpi-card">
-                <div class="kpi-header"><span>Total Grade Target</span><i class="fa-solid fa-star"></i></div>
-                <div class="kpi-value" style="color: #fbbf24;">100 / 100</div>
-                <div class="kpi-sub"><i class="fa-solid fa-circle-check"></i> Grade A+ (Exemplary)</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-header"><span>Chart Typology Implemented</span><i class="fa-solid fa-chart-pie"></i></div>
-                <div class="kpi-value">32+ Charts</div>
-                <div class="kpi-sub">8 Major Chart Families</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-header"><span>3D WebGL Visualizations</span><i class="fa-solid fa-cube"></i></div>
-                <div class="kpi-value">3 Engines</div>
-                <div class="kpi-sub">Scatter, Surface, Trajectory</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-header"><span>Data Cleaning Rigor</span><i class="fa-solid fa-shield-halved"></i></div>
-                <div class="kpi-value">550 Clones</div>
-                <div class="kpi-sub">Purged + Outliers Clamped</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-header"><span>Linear Regression R²</span><i class="fa-solid fa-square-root-variable"></i></div>
-                <div class="kpi-value">0.7712</div>
-                <div class="kpi-sub">p < 0.001 (Significant)</div>
-            </div>
-        </div>
-
-        <!-- Rubric Compliance Table -->
-        <div class="section-header">
-            <div class="section-title"><i class="fa-solid fa-clipboard-list"></i> Course Evaluation Criteria Compliance Matrix</div>
-            <span class="section-tag">Target: Maximum Marks (Full 100/100)</span>
-        </div>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th style="width: 28%;">Assessment Criterion</th>
-                        <th style="width: 42%;">Implementation Evidence in this Dashboard</th>
-                        <th style="width: 10%;">Max Marks</th>
-                        <th style="width: 10%;">Self Score</th>
-                        <th style="width: 10%;">Evaluation Grade</th>
-                    </tr>
-                </thead>
-                <tbody id="rubricTableBody">
-                    <!-- Populated dynamically via JS -->
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Gauges Row for Overall Institutional Metrics -->
-        <div class="section-header" style="margin-top: 30px;">
-            <div class="section-title"><i class="fa-solid fa-gauge"></i> Key Performance Indicators & Target Achievement Meters</div>
-        </div>
-        <div class="chart-grid-3">
-            <div class="chart-card">
-                <div class="chart-card-header">
-                    <div class="chart-title"><i class="fa-solid fa-compass"></i> IIT Turnout Rate Gauge</div>
-                    <span class="chart-type-badge">Gauge</span>
-                </div>
-                <div id="plotGaugeIITTurnout" style="height: 240px;"></div>
-                <div class="chart-inference"><strong>Target:</strong> > 70% | <strong>Achieved:</strong> 74.2% across 4,750 verified campus events.</div>
-            </div>
-            <div class="chart-card">
-                <div class="chart-card-header">
-                    <div class="chart-title"><i class="fa-solid fa-compass"></i> UCB Turnout Rate Gauge</div>
-                    <span class="chart-type-badge">Gauge</span>
-                </div>
-                <div id="plotGaugeUCBTurnout" style="height: 240px;"></div>
-                <div class="chart-inference"><strong>Target:</strong> > 68% | <strong>Achieved:</strong> 70.1% driven by ticket-commitment mechanics.</div>
-            </div>
-            <div class="chart-card">
-                <div class="chart-card-header">
-                    <div class="chart-title"><i class="fa-solid fa-compass"></i> UCB Mean ROI Gauge</div>
-                    <span class="chart-type-badge">Gauge</span>
-                </div>
-                <div id="plotGaugeUCBROI" style="height: 240px;"></div>
-                <div class="chart-inference"><strong>Target:</strong> > 100% | <strong>Achieved:</strong> 184.2% fiscal self-sufficiency.</div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- ============================================================== -->
     <!-- TAB 2: 3D VISUALIZATION ARENA (3 INTERACTIVE 3D GRAPHS) -->
@@ -1137,7 +943,7 @@ html_content = r"""<!DOCTYPE html>
             </div>
             <div id="plot3dScatter" style="width: 100%; height: 580px;"></div>
             <div class="chart-inference">
-                <strong>🎓 Evaluator Insight & Statistical Inference:</strong>
+                <strong>📊 Key Analytical Finding & Operational Insight:</strong>
                 <strong>Axes:</strong> X = Event Budget (Lakhs INR / Thousands USD) | Y = Actual Attendance | Z = Student Satisfaction Rating (1.0 to 5.0) | Bubble Size = Venue Maximum Capacity.
                 <br><em>Key Finding:</em> No clustering observed at the high-budget corner for high ratings, proving that student satisfaction is driven by content engagement and peer networking rather than sheer financial expenditure.
             </div>
@@ -1157,7 +963,7 @@ html_content = r"""<!DOCTYPE html>
             </div>
             <div id="plot3dSurface" style="width: 100%; height: 560px;"></div>
             <div class="chart-inference">
-                <strong>🎓 Evaluator Insight & Statistical Inference:</strong>
+                <strong>📊 Key Analytical Finding & Operational Insight:</strong>
                 <strong>Topographical Elevation:</strong> High peaks (colored neon yellow/orange) represent maximum student turnout rates (> 80%). The ridge reveals that Technical and Cultural events across IIT Bombay, IIT Delhi, and UCB EECS maintain peak student engagement regardless of semester timing.
             </div>
         </div>
@@ -1176,7 +982,7 @@ html_content = r"""<!DOCTYPE html>
             </div>
             <div id="plot3dTrajectory" style="width: 100%; height: 560px;"></div>
             <div class="chart-inference">
-                <strong>🎓 Evaluator Insight & Statistical Inference:</strong>
+                <strong>📊 Key Analytical Finding & Operational Insight:</strong>
                 <strong>Trajectory Dynamics:</strong> X-axis = Month Index (2023 to 2026) | Y-axis = Total Monthly Attendance (in Thousands) | Z-axis = Mean CSAT Rating. The glowing 3D vector illustrates seasonal oscillation: spring festivals cause massive attendance surges with stable student satisfaction.
             </div>
         </div>
@@ -1187,7 +993,7 @@ html_content = r"""<!DOCTYPE html>
     <!-- ============================================================== -->
     <section id="tab-gallery" class="tab-pane">
         <div class="callout-box">
-            <strong><i class="fa-solid fa-layer-group"></i> Comprehensive Academic Chart Typology Showcase:</strong>
+            <strong><i class="fa-solid fa-layer-group"></i> Master Chart Typology & Visual Analytics Gallery:</strong>
             Contains all requested chart varieties: <strong>Bar Graphs</strong> (Grouped, Horizontal, Stacked), <strong>Line Charts</strong> (Multi-series, Cumulative, Dual-axis), <strong>Scatter Plots</strong> (Bubble, OLS Linear Regression), <strong>Histograms</strong> (Binned with KDE Overlay), <strong>Pie & Donut Charts</strong>, <strong>Box & Whisker Plots</strong>, and <strong>Advanced Analytics</strong> (Violin, Correlation Heatmap, Waterfall, Radar, Funnel, Parallel Coordinates).
         </div>
 
@@ -1218,7 +1024,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Grouped Bar</span>
                     </div>
                     <div id="plotGalleryGroupedBar" style="height: 360px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Compares total event offerings across categories. UCB leads in Cultural/Social events (3,340) due to student club independence, while IIT leads in Research/Colloquia (1,314).</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Compares total event offerings across categories. UCB leads in Cultural/Social events (3,340) due to student club independence, while IIT leads in Research/Colloquia (1,314).</div>
                 </div>
 
                 <!-- Bar 2: Horizontal Ranking Bar -->
@@ -1228,7 +1034,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Horizontal Bar</span>
                     </div>
                     <div id="plotGalleryHorizBar" style="height: 360px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Horizontal orientation facilitates clear reading of institutional names. IIT Bombay and Delhi dominate with > 740,000 cumulative attendees each.</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Horizontal orientation facilitates clear reading of institutional names. IIT Bombay and Delhi dominate with > 740,000 cumulative attendees each.</div>
                 </div>
             </div>
 
@@ -1240,7 +1046,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Stacked Bar</span>
                     </div>
                     <div id="plotGalleryStackedApproval" style="height: 360px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Reveals institutional approval rates. 67.8% of Academic events receive rapid clearance, whereas Workshop/High-Budget events undergo 18.4% cancellation or postponement.</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Reveals institutional approval rates. 67.8% of Academic events receive rapid clearance, whereas Workshop/High-Budget events undergo 18.4% cancellation or postponement.</div>
                 </div>
 
                 <!-- Bar 4: Stacked Bar Priority Level -->
@@ -1250,7 +1056,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Stacked Bar</span>
                     </div>
                     <div id="plotGalleryStackedPriority" style="height: 360px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> High Priority events are concentrated in Technical and Career Fairs where administrative resources and security allocation are critical.</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> High Priority events are concentrated in Technical and Career Fairs where administrative resources and security allocation are critical.</div>
                 </div>
             </div>
         </div>
@@ -1269,7 +1075,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Line + Area</span>
                     </div>
                     <div id="plotGalleryMonthlyLine" style="height: 360px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Evaluates chronological footfall trajectories. Both institutions show sharp drops in December/June during semester examinations and peaks in September/February.</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Evaluates chronological footfall trajectories. Both institutions show sharp drops in December/June during semester examinations and peaks in September/February.</div>
                 </div>
 
                 <!-- Line 2: Cumulative Run-Rate -->
@@ -1279,7 +1085,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Cumulative Line</span>
                     </div>
                     <div id="plotGalleryCumulativeLine" style="height: 360px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Cumulative run-rate displays constant growth velocity across 42 consecutive months, surpassing 5.8 Million attendees per institution.</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Cumulative run-rate displays constant growth velocity across 42 consecutive months, surpassing 5.8 Million attendees per institution.</div>
                 </div>
             </div>
         </div>
@@ -1310,7 +1116,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Bubble Scatter</span>
                     </div>
                     <div id="plotGalleryBubble" style="height: 380px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Bubble radius corresponds to Venue Capacity; marker color denotes Student CSAT rating. Mass events (> 2,000 attendees) achieve ratings comparable to intimate workshops.</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Bubble radius corresponds to Venue Capacity; marker color denotes Student CSAT rating. Mass events (> 2,000 attendees) achieve ratings comparable to intimate workshops.</div>
                 </div>
             </div>
         </div>
@@ -1397,7 +1203,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Boxplot</span>
                     </div>
                     <div id="plotGalleryBoxCat" style="height: 380px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Displays Minimum, Q1 (25th percentile), Median (50th percentile), Q3 (75th percentile), and Maximum whiskers ($1.5 \times IQR$). Academic and Career events show the tightest IQR (most predictable outcomes).</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Displays Minimum, Q1 (25th percentile), Median (50th percentile), Q3 (75th percentile), and Maximum whiskers ($1.5 \times IQR$). Academic and Career events show the tightest IQR (most predictable outcomes).</div>
                 </div>
 
                 <!-- Box 2: Target Audience Turnout -->
@@ -1407,7 +1213,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Boxplot</span>
                     </div>
                     <div id="plotGalleryBoxAudience" style="height: 380px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Undergraduate events demonstrate highest median turnout ($74\%$), while Alumni events show broader variance ($IQR = 18\%$).</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Undergraduate events demonstrate highest median turnout ($74\%$), while Alumni events show broader variance ($IQR = 18\%$).</div>
                 </div>
             </div>
         </div>
@@ -1448,7 +1254,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Violin Plot</span>
                     </div>
                     <div id="plotGalleryViolin" style="height: 380px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Combines boxplot quartiles with mirrored Kernel Density Estimation (KDE) curves to illustrate multimodality and probability mass.</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Combines boxplot quartiles with mirrored Kernel Density Estimation (KDE) curves to illustrate multimodality and probability mass.</div>
                 </div>
 
                 <!-- Advanced 4: Financial Waterfall -->
@@ -1458,7 +1264,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Waterfall</span>
                     </div>
                     <div id="plotGalleryWaterfall" style="height: 380px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Sequential EBITDA bridge: Ticket Revenue ($116.8M) + Sponsorship ($14.9M) - Budgets ($38.5M) - Marketing ($9.1M) yields $84.1M Net Profit.</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Sequential EBITDA bridge: Ticket Revenue ($116.8M) + Sponsorship ($14.9M) - Budgets ($38.5M) - Marketing ($9.1M) yields $84.1M Net Profit.</div>
                 </div>
             </div>
 
@@ -1470,7 +1276,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Funnel</span>
                     </div>
                     <div id="plotGalleryFunnel" style="height: 380px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Traces student attrition through event lifecycle stages: Venue Capacity -> Registrations (78%) -> Actual Attendance (72%) -> Satisfied Attendees (58%).</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Traces student attrition through event lifecycle stages: Venue Capacity -> Registrations (78%) -> Actual Attendance (72%) -> Satisfied Attendees (58%).</div>
                 </div>
 
                 <!-- Advanced 6: Radar / Spider Chart -->
@@ -1480,7 +1286,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Radar / Spider</span>
                     </div>
                     <div id="plotGalleryRadar" style="height: 380px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Multivariate radial polygon comparing IIT vs UCB across Turnout, Utilization, CSAT, Cost Efficiency, Attendance Reliability, and Fiscal Model.</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Multivariate radial polygon comparing IIT vs UCB across Turnout, Utilization, CSAT, Cost Efficiency, Attendance Reliability, and Fiscal Model.</div>
                 </div>
             </div>
 
@@ -1491,7 +1297,7 @@ html_content = r"""<!DOCTYPE html>
                     <span class="chart-type-badge">Parallel Coordinates</span>
                 </div>
                 <div id="plotGalleryParallel" style="height: 440px;"></div>
-                <div class="chart-inference"><strong>Evaluator Note:</strong> Simultaneously visualizes 6 continuous and categorical dimensions per event. Drag axes to isolate sub-populations (e.g. high-budget low-rating clusters).</div>
+                <div class="chart-inference"><strong>Key Operational Insight:</strong> Simultaneously visualizes 6 continuous and categorical dimensions per event. Drag axes to isolate sub-populations (e.g. high-budget low-rating clusters).</div>
             </div>
 
             <div class="chart-grid-2">
@@ -1502,7 +1308,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Treemap</span>
                     </div>
                     <div id="plotGalleryTreemap" style="height: 380px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Proportional rectangle tiling representing hierarchical venue attendance volume within each event category.</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Proportional rectangle tiling representing hierarchical venue attendance volume within each event category.</div>
                 </div>
 
                 <!-- Advanced 9: Sunburst -->
@@ -1512,7 +1318,7 @@ html_content = r"""<!DOCTYPE html>
                         <span class="chart-type-badge">Sunburst</span>
                     </div>
                     <div id="plotGallerySunburst" style="height: 380px;"></div>
-                    <div class="chart-inference"><strong>Evaluator Note:</strong> Concentric rings for drilldown analysis: inner ring represents macro category, outer ring represents specific campus venue.</div>
+                    <div class="chart-inference"><strong>Key Operational Insight:</strong> Concentric rings for drilldown analysis: inner ring represents macro category, outer ring represents specific campus venue.</div>
                 </div>
             </div>
         </div>
@@ -1521,7 +1327,39 @@ html_content = r"""<!DOCTYPE html>
     <!-- ============================================================== -->
     <!-- TAB 4: EXECUTIVE KPIS & OVERVIEW -->
     <!-- ============================================================== -->
-    <section id="tab-overview" class="tab-pane">
+    <section id="tab-overview" class="tab-pane active">
+
+        <!-- Institutional KPI Achievement Gauges -->
+        <div class="section-header">
+            <div class="section-title"><i class="fa-solid fa-gauge"></i> Key Performance Indicators & Target Achievement Meters</div>
+        </div>
+        <div class="chart-grid-3" style="margin-bottom: 24px;">
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <div class="chart-title"><i class="fa-solid fa-compass"></i> IIT Turnout Rate Gauge</div>
+                    <span class="chart-type-badge">Gauge</span>
+                </div>
+                <div id="plotGaugeIITTurnout" style="height: 240px;"></div>
+                <div class="chart-inference"><strong>Target:</strong> > 70% | <strong>Achieved:</strong> 74.2% across 4,750 verified campus events.</div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <div class="chart-title"><i class="fa-solid fa-compass"></i> UCB Turnout Rate Gauge</div>
+                    <span class="chart-type-badge">Gauge</span>
+                </div>
+                <div id="plotGaugeUCBTurnout" style="height: 240px;"></div>
+                <div class="chart-inference"><strong>Target:</strong> > 68% | <strong>Achieved:</strong> 70.1% driven by ticket-commitment mechanics.</div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <div class="chart-title"><i class="fa-solid fa-compass"></i> UCB Mean ROI Gauge</div>
+                    <span class="chart-type-badge">Gauge</span>
+                </div>
+                <div id="plotGaugeUCBROI" style="height: 240px;"></div>
+                <div class="chart-inference"><strong>Target:</strong> > 100% | <strong>Achieved:</strong> 184.2% fiscal self-sufficiency.</div>
+            </div>
+        </div>
+
         <div class="section-header">
             <div class="section-title"><i class="fa-solid fa-flag"></i> 🇮🇳 Dataset 1: IIT Campus Events (Cleaned)</div>
             <span class="section-tag">4,750 Clean Records (350 Duplicates Purged)</span>
@@ -1789,7 +1627,7 @@ html_content = r"""<!DOCTYPE html>
     </section>
 
     <footer>
-        <p>🎓 <strong>Institutional Event Big Data Analytics & 3D Visualizer</strong> | Designed for DAV Academic Evaluation & Capstone Scoring | Built with Plotly WebGL, HTML5 & Python</p>
+        <p><strong>Institutional Event Big Data Analytics & 3D Visualizer</strong> | Enterprise Campus Intelligence Platform | Built with Plotly WebGL, HTML5 & Python</p>
     </footer>
 
     <!-- ============================================================== -->
@@ -1838,24 +1676,7 @@ html_content = r"""<!DOCTYPE html>
             window.dispatchEvent(new Event('resize'));
         }
 
-        // ==========================================
-        // 1. EVALUATOR RUBRIC & SCORECARD
-        // ==========================================
-        function initRubricTable() {
-            const tbody = document.getElementById('rubricTableBody');
-            if (!tbody || !dashboardData.rubric_compliance) return;
-
-            tbody.innerHTML = dashboardData.rubric_compliance.map(r => `
-                <tr>
-                    <td><strong>${r.criterion}</strong></td>
-                    <td style="color: #cbd5e1; font-size: 0.83rem;">${r.description}</td>
-                    <td style="font-weight: 700; color: #94a3b8;">${r.max_marks}</td>
-                    <td style="font-weight: 800; color: #34d399; font-size: 1.05rem;">${r.achieved_marks}</td>
-                    <td><span class="tag-pill tag-green">${r.grade}</span></td>
-                </tr>
-            `).join('');
-        }
-
+        
         function initGauges() {
             const gData = dashboardData.gauges_data;
             
@@ -2957,8 +2778,7 @@ html_content = r"""<!DOCTYPE html>
 
         window.addEventListener('load', () => {
             initFilterControls();
-            initRubricTable();
-            initGauges();
+                        initGauges();
             render3DScatter('iit');
             render3DSurface('iit');
             render3DTraj('iit');
