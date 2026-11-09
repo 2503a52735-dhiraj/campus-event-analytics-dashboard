@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Event Analytics - Project Presentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #090d16;
+            --bg-card: #111827;
+            --bg-card-hover: #1e293b;
+            --border: #1f293d;
+            --accent-blue: #38bdf8;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .slide-container {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .slide {
+            background: linear-gradient(145deg, #111827 0%, #0b1120 100%);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 40px 48px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+        }
+
+        .slide-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-blue);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        h1.title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #60a5fa, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        h2.subtitle {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .team-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+        }
+
+        .team-member i {
+            color: var(--accent-blue);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 24px 0 16px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h3.iit-tag {
+            color: #38bdf8;
+        }
+
+        .card h3.univ-tag {
+            color: #f472b6;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        li {
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: #cbd5e1;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: '•';
+            position: absolute;
+            left: 4px;
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        li strong {
+            color: #f8fafc;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .stat-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 14px 16px;
+            text-align: center;
+        }
+
+        .stat-val {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-lbl {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .graph-item {
+            background: rgba(15, 23, 42, 0.5);
+            border-left: 4px solid var(--accent-purple);
+            padding: 14px 18px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 12px;
+        }
+
+        .graph-name {
+            font-weight: 700;
+            font-size: 0.98rem;
+            color: #f8fafc;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .graph-desc {
+            font-size: 0.88rem;
+            color: #94a3b8;
+            line-height: 1.45;
+        }
+
+        .print-btn {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .print-btn:hover {
+            opacity: 0.9;
+        }
+
+        @media print {
+            body { background: white; color: black; padding: 0; }
+            .print-btn { display: none; }
+            .slide {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                background: white;
+                color: black;
+                page-break-after: always;
+                margin-bottom: 0;
+            }
+            .slide::before { display: none; }
+            h1.title, .stat-val, .card h3.iit-tag, .card h3.univ-tag, .section-title {
+                color: #1e3a8a !important;
+                -webkit-text-fill-color: #1e3a8a !important;
+            }
+            .card, .stat-box, .graph-item, .team-box {
+                background: #f8fafc !important;
+                border: 1px solid #e2e8f0 !important;
+                color: black !important;
+            }
+            li, .graph-desc { color: #334155 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="print-btn" onclick="window.print()">
+        <i class="fa-solid fa-print"></i> Print / Save as PDF
+    </button>
+
+    <div class="slide-container">
+
+        <!-- SLIDE 1: COVER & OVERVIEW -->
+        <div class="slide">
+            <span class="slide-badge">Slide 1: Executive Overview</span>
+            <h1 class="title">CAMPUS EVENT ANALYTICS</h1>
+            <h2 class="subtitle">Multi-Institutional Event Data Integrity, Cleaning & Interactive 3D Analytics</h2>
+            
+            <div class="team-box">
+                <div class="team-member"><i class="fa-solid fa-user-graduate"></i> <strong>2503A52735</strong> - G. Dhiraj Kumar</div>
+                <div class="team-member"><i class="fa-solid fa-user-graduate"></i> <strong>2503A52742</strong> - P. John David</div>
+                <div class="team-member"><i class="fa-solid fa-user-graduate"></i> <strong>2503A52743</strong> - S. Jashwanth</div>
+            </div>
+
+            <div class="section-title"><i class="fa-solid fa-bullseye"></i> Key Points</div>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="iit-tag"><i class="fa-solid fa-building-columns"></i> Dataset 1: IIT Campus Events</h3>
+                    <ul>
+                        <li><strong>Raw File:</strong> IIT_Campus_Event_Raw_5100_Rows.xlsx</li>
+                        <li><strong>Scope:</strong> 5,100 raw events across 11 premier IIT campuses and 7 event categories.</li>
+                        <li><strong>Curated Size:</strong> 4,750 clean records (350 duplicate entries pruned).</li>
+                        <li><strong>Key Focus:</strong> Multi-campus resource allocation, capacity utilization, and rupee budgeting (INR).</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="univ-tag"><i class="fa-solid fa-university"></i> Dataset 2: General University Events</h3>
+                    <ul>
+                        <li><strong>Raw File:</strong> uncleaned_event_data.csv (UC Berkeley benchmark)</li>
+                        <li><strong>Scope:</strong> 10,200 raw events across 7 Academic & Student Affairs departments.</li>
+                        <li><strong>Curated Size:</strong> 10,000 clean records (200 duplicate rows eliminated).</li>
+                        <li><strong>Key Focus:</strong> Commercial ticketing, sponsorship yield, venue turnover, and net revenue ($).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>Combined Scale:</strong> 15,300 raw event entries harmonized into 14,750 verified records.</li>
+                <li><strong>Objective:</strong> Rectify corruption, resolve physical capacity anomalies, standardize formats, and feed a real-time 2D/3D executive dashboard.</li>
+                <li><strong>Dataset Sources:</strong> Institutional Event Registry & UC Berkeley Public Campus Event Data Repository.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 2: DATA CLEANING METHODOLOGY -->
+        <div class="slide">
+            <span class="slide-badge">Slide 2: Data Cleaning Methodology</span>
+            <div class="section-title" style="margin-top:0;"><i class="fa-solid fa-broom"></i> Data Cleaning (In Simple Words)</div>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="iit-tag"><i class="fa-solid fa-circle-check"></i> IIT Dataset Cleaning</h3>
+                    <ul>
+                        <li><strong>Duplicate Pruning:</strong> Identified and removed 350 exact duplicate rows, reducing record count from 5,100 to 4,750.</li>
+                        <li><strong>Campus & Category Normalization:</strong> Fixed typos and case inconsistencies (e.g., 'iit bombay', 'IIT DELHI'); imputed missing campus tags with 'IIT Main Campus' (420 records) and categories with 'General / Academic' (445 records).</li>
+                        <li><strong>Missing Attendance & Budget:</strong> Replaced missing attendance (369 rows) using registration counts & median turnout (75%); filled missing budgets (484 rows) using category medians.</li>
+                        <li><strong>Capacity Outlier Correction:</strong> Fixed 185 unrealistic capacities (>15,000 or negative) and 461 negative attendance figures using venue size thresholds.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="univ-tag"><i class="fa-solid fa-circle-check"></i> University (CSV) Dataset Cleaning</h3>
+                    <ul>
+                        <li><strong>Duplicate Pruning:</strong> Removed 200 duplicate event records (subset & event ID deduplication), standardizing 10,200 rows down to 10,000.</li>
+                        <li><strong>Dummy Registration Purge:</strong> Replaced 1,253 placeholder entries (e.g., registrations recorded as '99999') with 85% of venue capacity.</li>
+                        <li><strong>Rating & Price Boundary Capping:</strong> Fixed 30 student ratings that exceeded the 5.0 ceiling (some logged as 99) and capped extreme ticket prices ($15,000 errors capped to typical $0–$100 range).</li>
+                        <li><strong>Financial Recalculation:</strong> Corrected 40 negative budgets; dynamically recomputed Net Revenue = (Attendance × Ticket Price + Sponsorship) − Total Costs.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 10px;">
+                <h3><i class="fa-solid fa-shield-halved" style="color:var(--accent-green);"></i> Common Outlier Handling Logic</h3>
+                <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.6;">
+                    <strong>Physical Venue Law:</strong> If recorded attendance exceeded maximum hall capacity, attendance was capped to physical capacity (because 800 people cannot physically sit in a 500-seat auditorium). Original figures were preserved in audit logs for 100% transparency.
+                </p>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: ANALYSIS & KEY METRICS -->
+        <div class="slide">
+            <span class="slide-badge">Slide 3: Comparative Analysis</span>
+            <div class="section-title" style="margin-top:0;"><i class="fa-solid fa-chart-line"></i> Institutional Analysis & KPIs</div>
+            
+            <p style="font-size: 0.92rem; color: #94a3b8; margin-bottom: 16px;">
+                Key operational metrics extracted from both cleaned datasets:
+            </p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="iit-tag"><i class="fa-solid fa-landmark"></i> IIT Events Performance</h3>
+                    <div class="stat-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="stat-box">
+                            <div class="stat-val">4,750</div>
+                            <div class="stat-lbl">Cleaned Events</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-val">9.24M</div>
+                            <div class="stat-lbl">Total Footfall</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-val">&#8377;359.1 Cr</div>
+                            <div class="stat-lbl">Budget Allocated</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-val">66.1%</div>
+                            <div class="stat-lbl">Avg Turnout Rate</div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><strong>Top Campuses by Footfall:</strong> IIT Kharagpur, IIT Bombay & IIT Delhi led aggregate attendance.</li>
+                        <li><strong>Student CSAT Rating:</strong> Averaged <strong>2.98 / 5.0</strong>, highlighting opportunities for logistical improvements in mega-events.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="univ-tag"><i class="fa-solid fa-building-columns"></i> University Events Performance</h3>
+                    <div class="stat-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="stat-box">
+                            <div class="stat-val">10,000</div>
+                            <div class="stat-lbl">Cleaned Events</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-val">3.88M</div>
+                            <div class="stat-lbl">Total Attendees</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-val">$13.97M</div>
+                            <div class="stat-lbl">Net Revenue</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-val">64.3%</div>
+                            <div class="stat-lbl">Avg Turnout Rate</div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><strong>Leading Departments:</strong> Haas School of Business, EECS, and Berkeley Law generated over 60% of net surplus.</li>
+                        <li><strong>Student Satisfaction:</strong> High rating of <strong>4.29 / 5.0</strong> across academic workshops and social gatherings.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fa-solid fa-scale-balanced" style="color:var(--accent-amber);"></i> Cross-Dataset Summary</h3>
+                <ul>
+                    <li><strong>Total Events Managed:</strong> 14,750 verified campus events across 18 academic units.</li>
+                    <li><strong>Overall Footfall:</strong> 13.12 Million participants engaged across both institutions.</li>
+                    <li><strong>Data Quality Score:</strong> Increased from <strong>81.4%</strong> (raw) to <strong>100%</strong> (cleaned & validated).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: DASHBOARD GRAPHS -->
+        <div class="slide">
+            <span class="slide-badge">Slide 4: Dashboard Visualizations</span>
+            <div class="section-title" style="margin-top:0;"><i class="fa-solid fa-chart-pie"></i> Graphs Included In Dashboard (In Simple Words)</div>
+            
+            <div class="graph-item" style="border-color: #38bdf8;">
+                <div class="graph-name"><i class="fa-solid fa-chart-line" style="color:#38bdf8;"></i> Monthly Footfall & Financial Trends (Line Graph)</div>
+                <div class="graph-desc">Displays chronological surges in attendance and revenue. Shows distinct peaks during early semester orientations (August/September) and post-midterm festival seasons (January/February).</div>
+            </div>
+
+            <div class="graph-item" style="border-color: #a855f7;">
+                <div class="graph-name"><i class="fa-solid fa-chart-column" style="color:#a855f7;"></i> Unit / Departmental Performance (Bar & Column Charts)</div>
+                <div class="graph-desc">Compares attendance and revenue yields across all 11 IIT campuses and 7 University faculties. Clearly illustrates which units draw the highest participation and manage budgets most efficiently.</div>
+            </div>
+
+            <div class="graph-item" style="border-color: #ec4899;">
+                <div class="graph-name"><i class="fa-solid fa-chart-pie" style="color:#ec4899;"></i> Category Portfolio Mix (Donut & Pie Charts)</div>
+                <div class="graph-desc">Breaks down events into Academic, Technical, Cultural, Sports, Social, and Career categories. Shows a balanced distribution (~14% to 18% each), preventing institutional over-reliance on any single activity.</div>
+            </div>
+
+            <div class="graph-item" style="border-color: #10b981;">
+                <div class="graph-name"><i class="fa-solid fa-cube" style="color:#10b981;"></i> 3D WebGL Scatter Plot (Budget vs. Attendance vs. Satisfaction)</div>
+                <div class="graph-desc">An interactive 3D spatial model where the X-axis is Budget, Y-axis is Attendance, and Z-axis is Satisfaction. Rotatable in 360 degrees, allowing evaluators to spot high-ROI sweet spots and isolated outliers.</div>
+            </div>
+
+            <div class="graph-item" style="border-color: #f59e0b;">
+                <div class="graph-name"><i class="fa-solid fa-mountain" style="color:#f59e0b;"></i> 3D Topographic Surface Mesh (Turnout Rate Across Units & Categories)</div>
+                <div class="graph-desc">A continuous 3D contour terrain map visualizing turnout percentages across department/campus coordinates, identifying peak engagement zones and turnout valleys.</div>
+            </div>
+
+            <div class="graph-item" style="border-color: #06b6d4;">
+                <div class="graph-name"><i class="fa-solid fa-bezier-curve" style="color:#06b6d4;"></i> 3D Time-Space Trajectory Curve (Temporal Evolution)</div>
+                <div class="graph-desc">Traces how footfall and CSAT ratings evolve over time simultaneously along a continuous 3D helical path across the academic calendar.</div>
+            </div>
+
+            <div class="graph-item" style="border-color: #6366f1;">
+                <div class="graph-name"><i class="fa-solid fa-gauge-high" style="color:#6366f1;"></i> Data Quality & Audit Health Gauges</div>
+                <div class="graph-desc">Side-by-side indicator gauges measuring the dramatic jump in completeness, missing value mitigation (from ~10% down to 0%), and 100% capacity-compliant turnout.</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+

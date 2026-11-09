@@ -1,0 +1,80 @@
+=== CSV DETAILED AUDIT ===
+Numeric summary:
+Col: Venue Capacity | min=50, max=2500, negs=0, outliers=1469 (14.4%) [IQR bounds: -1250.00 to 2350.00]
+Col: Registrations | min=32, max=99999, negs=0, outliers=1253 (12.3%) [IQR bounds: -950.00 to 1858.00]
+Col: Actual Attendance | min=0.0, max=2785.0, negs=0, outliers=1151 (11.3%) [IQR bounds: -587.50 to 1080.50]
+Col: Turnout Rate | min=0.0, max=0.9497264021887823, negs=0, outliers=1676 (16.4%) [IQR bounds: 0.31 to 1.16]
+Col: Event Budget ($) | min=-50000, max=8000, negs=40, outliers=40 (0.4%) [IQR bounds: -3750.00 to 11850.00]
+Col: Ticket Price ($) | min=0, max=15000, negs=0, outliers=30 (0.3%) [IQR bounds: -37.50 to 62.50]
+Col: Marketing Spend ($) | min=100, max=1500, negs=0, outliers=0 (0.0%) [IQR bounds: -650.00 to 2150.00]
+Col: Sponsorship ($) | min=0.0, max=3000.0, negs=0, outliers=0 (0.0%) [IQR bounds: -2250.00 to 3750.00]
+Col: Net Revenue ($) | min=-9300.0, max=134450.0, negs=6901, outliers=1152 (11.3%) [IQR bounds: -13627.50 to 9342.50]
+Col: ROI % | min=-1.0, max=137.66666666666666, negs=7255, outliers=1328 (13.0%) [IQR bounds: -2.85 to 2.08]
+Col: Student Rating (1-5) | min=3.6, max=99.0, negs=0, outliers=30 (0.3%) [IQR bounds: 2.85 to 5.65]
+
+Categorical columns in CSV:
+Event ID: 10000 unique, sample: ['EVT-UCB-10001', 'EVT-UCB-10002', 'EVT-UCB-10003', 'EVT-UCB-10004', 'EVT-UCB-10005', 'EVT-UCB-10006']
+Event Name: 120 unique, sample: ['Physics Annual Lecture S1', 'Tech & Engineering Career Fair S1', 'Leadership Seminar S1', 'Campus Bonfire & Rally S4', 'Mindfulness & Yoga S4', 'Esports Championship S2']
+Category: 6 unique, sample: ['Academic', 'Career', 'Workshop', 'Social', 'Sports', 'Cultural']
+Host Department: 7 unique, sample: ['Haas School of Business', 'Electrical Eng & Computer Sciences', 'Berkeley Law', 'College of Letters & Science', 'RSF Rec Sports', 'School of Public Health']
+Target Audience: 5 unique, sample: ['Alumni', 'Faculty & Staff', 'Undergraduate', 'Graduate', 'All Campus']
+Event Date: 366 unique, sample: ['2026-07-16', '2025-10-21', '2025-10-16', '2026-03-24', '2025-09-13', '2025-11-02']
+Organizer Email: 9500 unique, sample: ['organizer.2@berkeley.edu', 'organizer.3@berkeley.edu', 'organizer.4@berkeley.edu', 'organizer.5@berkeley.edu', 'organizer.6@berkeley.edu', 'organizer.7@berkeley.edu']
+Approval Status: 3 unique, sample: ['Approved', 'Cancelled', 'Pending']
+Priority Level: 3 unique, sample: ['Low', 'Medium', 'High']
+
+=== EXCEL DETAILED AUDIT ===
+Numeric summary:
+Col: max_capacity | min=-2500, max=99999999, negs=95, outliers=90 (1.8%) [IQR bounds: -3411.25 to 9302.75]
+Col: total_registrations | min=20, max=147019590, negs=0, outliers=111 (2.2%) [IQR bounds: -3743.25 to 8040.75]
+Col: actual_attendance | min=-793.0, max=144945726.0, negs=104, outliers=357 (7.0%) [IQR bounds: -2708.25 to 5517.75]
+Col: budget_inr | min=-120000.0, max=999000000.0, negs=53, outliers=100 (2.0%) [IQR bounds: -853843.38 to 2333015.62]
+Col: csat_rating | min=1.0, max=5.0, negs=0, outliers=0 (0.0%) [IQR bounds: -1.00 to 7.00]
+
+Categorical columns in Excel:
+event_id: 4750 unique, sample: ['EVT-2023-2026-101046', 'EVT-2023-2026-101652', 'EVT-2023-2026-101413', 'EVT-2023-2026-100003', 'EVT-2023-2026-103790', 'EVT-2023-2026-103617', 'EVT-2023-2026-104385', 'EVT-2023-2026-101033', 'EVT-2023-2026-103885', 'EVT-2023-2026-100537']
+iit_campus: 16 unique, sample: ['IIT Delhi', 'IIT Guwahati', 'iit hyderabad', 'IIT BHU', 'IIT Kanpur', 'IIT Hyderabad', 'IIT Kharagpur', 'IIT DELHI', 'IIT Bombay', 'IIT Madras']
+event_name: 4750 unique, sample: ['Event_1046_Conclave', 'Event_1652_Fest', 'Event_1413_Colloquium', 'Event_3_Expo', 'Event_3790_Colloquium', 'Event_3617_Summit', 'Event_4385_Carnival', 'Event_1033_Conclave', 'Event_3885_League', 'Event_537_Summit']
+event_category: 11 unique, sample: ['Sport', 'Research', 'Sports', 'Technical', 'Cultural', 'Acad', 'E-cell', 'Culturall', 'Academic', 'Tech']
+venue_name: 12 unique, sample: ['LHC 202', 'Main Auditorium', 'Gymkhana Grounds', 'Research Park Hall', 'Open Air Theatre', 'Convocation Hall', 'SAC Arena', 'Mini Auditorium', 'Sports Complex', 'LHC 101']
+event_date: 2828 unique, sample: ['14-Aug-2023', '2023-02-03', '07-20-2025', '03-22-2023', '13-May-2025', '26-Apr-2024', '28-Mar-2025', '2024-12-13', '01/12/2023', '01-07-2024']
+
+IIT Campus unique values:
+iit_campus
+NaN                420
+IIT Bombay         318
+IIT Madras         311
+IIT Roorkee        307
+iit kanpur         304
+iit roorkee        301
+IIT Kanpur         300
+IIT Gandhinagar    296
+iit madras         294
+IIT BHU            293
+iit bombay         288
+IIT Guwahati       286
+iit hyderabad      285
+IIT Kharagpur      283
+IIT Delhi          279
+IIT DELHI          271
+IIT Hyderabad      264
+Name: count, dtype: int64
+
+Event Category in Excel:
+event_category
+Culturall    472
+Acad         468
+NaN          445
+Tech         444
+Sport        433
+Cultural     424
+Sports       421
+E-Cell       417
+Research     406
+Academic     402
+E-cell       396
+Technical    372
+Name: count, dtype: int64
+
+Turnout Rate in CSV vs calculated Actual Attendance / Registrations:
+Mismatch in Turnout Rate: 7582

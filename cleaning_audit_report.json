@@ -1,0 +1,46 @@
+{
+    "IIT_Campus_Events": {
+        "dataset": "IIT Campus Events",
+        "initial_rows": 5100,
+        "initial_cols": 11,
+        "duplicates_removed": 350,
+        "final_rows": 4750,
+        "final_cols": 15,
+        "missing_values_handled": {
+            "iit_campus": 420,
+            "event_category": 445,
+            "actual_attendance": 369,
+            "budget_inr": 484,
+            "csat_rating": 441
+        },
+        "outliers_cleaned": {
+            "max_capacity_extreme": 185,
+            "registrations_extreme": 111,
+            "actual_attendance_negative_extreme": 461,
+            "budget_inr_extreme_or_negative": 153
+        }
+    },
+    "University_Events_CSV": {
+        "dataset": "University Events (CSV)",
+        "initial_rows": 10200,
+        "initial_cols": 20,
+        "duplicates_removed": 200,
+        "final_rows": 10000,
+        "final_cols": 24,
+        "missing_values_handled": {
+            "Actual Attendance": 508,
+            "Turnout Rate": 499,
+            "Sponsorship ($)": 493,
+            "Net Revenue ($)": 520,
+            "Student Rating (1-5)": 506,
+            "Organizer Email": 518,
+            "Priority Level": 502
+        },
+        "outliers_cleaned": {
+            "Student Rating > 5": 30,
+            "Ticket Price > $250": 30,
+            "Registrations == 99999": 1253,
+            "Negative Budget": 40
+        }
+    }
+}

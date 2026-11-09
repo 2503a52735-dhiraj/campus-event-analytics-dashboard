@@ -1,0 +1,141 @@
+=== 1. READING CSV ===
+CSV Shape: (10200, 20)
+CSV Columns: ['Event ID', 'Event Name', 'Category', 'Host Department', 'Target Audience', 'Event Date', 'Venue Capacity', 'Registrations', 'Actual Attendance', 'Turnout Rate', 'Event Budget ($)', 'Ticket Price ($)', 'Marketing Spend ($)', 'Sponsorship ($)', 'Net Revenue ($)', 'ROI %', 'Student Rating (1-5)', 'Organizer Email', 'Approval Status', 'Priority Level']
+
+CSV dtypes:
+Event ID                    str
+Event Name                  str
+Category                    str
+Host Department             str
+Target Audience             str
+Event Date                  str
+Venue Capacity            int64
+Registrations             int64
+Actual Attendance       float64
+Turnout Rate            float64
+Event Budget ($)          int64
+Ticket Price ($)          int64
+Marketing Spend ($)       int64
+Sponsorship ($)         float64
+Net Revenue ($)         float64
+ROI %                   float64
+Student Rating (1-5)    float64
+Organizer Email             str
+Approval Status             str
+Priority Level              str
+dtype: object
+
+CSV Missing Values:
+Event ID                  0
+Event Name                0
+Category                  0
+Host Department           0
+Target Audience           0
+Event Date                0
+Venue Capacity            0
+Registrations             0
+Actual Attendance       508
+Turnout Rate            499
+Event Budget ($)          0
+Ticket Price ($)          0
+Marketing Spend ($)       0
+Sponsorship ($)         493
+Net Revenue ($)         520
+ROI %                     0
+Student Rating (1-5)    506
+Organizer Email         518
+Approval Status           0
+Priority Level          502
+dtype: int64
+
+CSV Duplicates count: 82
+
+CSV Describe:
+             Event ID               Event Name  ... Approval Status Priority Level
+count           10200                    10200  ...           10200           9698
+unique          10000                      120  ...               3              3
+top     EVT-UCB-10030  Trivia & Movie Night S2  ...        Approved           High
+freq                2                      125  ...            6775           3264
+mean              NaN                      NaN  ...             NaN            NaN
+std               NaN                      NaN  ...             NaN            NaN
+min               NaN                      NaN  ...             NaN            NaN
+25%               NaN                      NaN  ...             NaN            NaN
+50%               NaN                      NaN  ...             NaN            NaN
+75%               NaN                      NaN  ...             NaN            NaN
+max               NaN                      NaN  ...             NaN            NaN
+
+[11 rows x 20 columns]
+
+CSV Head(5):
+        Event ID  ... Priority Level
+0  EVT-UCB-10001  ...            Low
+1  EVT-UCB-10002  ...         Medium
+2  EVT-UCB-10003  ...           High
+3  EVT-UCB-10004  ...            NaN
+4  EVT-UCB-10005  ...            Low
+
+[5 rows x 20 columns]
+
+============================================================
+
+=== 2. READING EXCEL ===
+Excel Shape: (5100, 11)
+Excel Columns: ['event_id', 'iit_campus', 'event_name', 'event_category', 'venue_name', 'event_date', 'max_capacity', 'total_registrations', 'actual_attendance', 'budget_inr', 'csat_rating']
+
+Excel dtypes:
+event_id                   str
+iit_campus                 str
+event_name                 str
+event_category             str
+venue_name                 str
+event_date                 str
+max_capacity             int64
+total_registrations      int64
+actual_attendance      float64
+budget_inr             float64
+csat_rating            float64
+dtype: object
+
+Excel Missing Values:
+event_id                 0
+iit_campus             420
+event_name               0
+event_category         445
+venue_name               0
+event_date               0
+max_capacity             0
+total_registrations      0
+actual_attendance      369
+budget_inr             484
+csat_rating            441
+dtype: int64
+
+Excel Duplicates count: 350
+
+Excel Describe:
+                    event_id  iit_campus  ...    budget_inr  csat_rating
+count                   5100        4680  ...  4.616000e+03  4659.000000
+unique                  4750          16  ...           NaN          NaN
+top     EVT-2023-2026-104468  IIT Bombay  ...           NaN          NaN
+freq                       3         318  ...           NaN          NaN
+mean                     NaN         NaN  ...  1.407490e+07     2.983344
+std                      NaN         NaN  ...  1.053071e+08     1.164559
+min                      NaN         NaN  ... -1.200000e+05     1.000000
+25%                      NaN         NaN  ...  3.412288e+05     2.000000
+50%                      NaN         NaN  ...  7.353195e+05     3.000000
+75%                      NaN         NaN  ...  1.137944e+06     4.000000
+max                      NaN         NaN  ...  9.990000e+08     5.000000
+
+[11 rows x 11 columns]
+
+Excel Head(5):
+               event_id     iit_campus  ... budget_inr csat_rating
+0  EVT-2023-2026-101046      IIT Delhi  ...        NaN         2.4
+1  EVT-2023-2026-101652            NaN  ...        NaN         1.8
+2  EVT-2023-2026-101413   IIT Guwahati  ...   434367.0         3.9
+3  EVT-2023-2026-100003  iit hyderabad  ...   766403.0         3.6
+4  EVT-2023-2026-103790  iit hyderabad  ...   907266.0         3.3
+
+[5 rows x 11 columns]
+
+=== COMPLETED INSPECTION ===
