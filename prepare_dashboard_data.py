@@ -300,6 +300,29 @@ rubric_compliance = [
 sample_iit_table = df_iit.head(100).to_dict(orient='records')
 sample_ucb_table = df_univ.head(100).to_dict(orient='records')
 
+# 19. Full Compact Event Records for Dynamic Real-Time Client-Side Filtering
+df_iit['year'] = pd.to_datetime(df_iit['event_date_cleaned']).dt.year
+df_iit['month'] = pd.to_datetime(df_iit['event_date_cleaned']).dt.strftime('%Y-%m')
+df_univ['year'] = pd.to_datetime(df_univ['Event Date Cleaned']).dt.year
+df_univ['month'] = pd.to_datetime(df_univ['Event Date Cleaned']).dt.strftime('%Y-%m')
+
+all_events_list = []
+for _, r in df_iit.iterrows():
+    all_events_list.append([
+        'iit', str(r['event_id']), str(r['event_name']), str(r['iit_campus']), str(r['event_category']),
+        int(r['year']), str(r['month']), int(r['actual_attendance']), int(r['total_registrations']),
+        int(r['max_capacity']), round(float(r['budget_inr'])/100000, 2), round(float(r['csat_rating']), 2),
+        round(float(r['turnout_rate']), 1), 0.0
+    ])
+
+for _, r in df_univ.iterrows():
+    all_events_list.append([
+        'ucb', str(r['Event ID']), str(r['Event Name']), str(r['Host Department']), str(r['Category']),
+        int(r['year']), str(r['month']), int(r['Actual Attendance']), int(r['Registrations']),
+        int(r['Venue Capacity']), round(float(r['Event Budget ($)'])/1000, 2), round(float(r['Student Rating (1-5)']), 2),
+        round(float(r['Turnout Rate (%)']), 1), round(float(r['Net Revenue ($)'])/1000, 2)
+    ])
+
 payload = {
     "audit_report": audit_report,
     "scatter3d_iit": scatter3d_iit,
@@ -333,7 +356,9 @@ payload = {
     "campuses": campuses,
     "depts": depts,
     "categories_iit": categories_iit,
-    "categories_ucb": categories_ucb
+    "categories_ucb": categories_ucb,
+    "all_events": all_events_list,
+    "event_cols": ['ds','id','name','unit','cat','yr','mo','att','reg','cap','bud','rat','to','rev']
 }
 
 with open(os.path.join(base_dir, "dashboard_data.json"), "w") as f:
